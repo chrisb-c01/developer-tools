@@ -1,0 +1,9 @@
+isort
+flake8
+flake8-bugbear
+black
+mypy
+pytest
+coverage[toml]
+bandit
+safety

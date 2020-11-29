@@ -1,0 +1,31 @@
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 88
+skip = []
+import_heading_stdlib = 'Standard library imports'
+import_heading_thirdparty = 'Third party imports'
+import_heading_firstparty = 'Local application imports'
+import_heading_localfolder = 'Local folder imports'
+known_first_party = ['app']
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra"
+testpaths = [
+    "app",
+]
+python_files = "*_test.py"
+junit_family = "legacy"
+
+[tool.coverage.run]
+branch = true
+command_line = '-m pytest'
+source = ['app/']
+
+[tool.coverage.report]
+precision = 2
+skip_covered = true
+fail_under = 90
