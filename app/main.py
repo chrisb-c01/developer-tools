@@ -2,8 +2,6 @@
 from datetime import datetime as dt
 
 # Third party imports
-from typing import List
-
 from pytz import timezone
 
 # Local application imports
@@ -12,7 +10,7 @@ from app.const import NAME
 tz = timezone("Europe/Amsterdam")
 
 
-def print_hi(name: str) -> str:
+def print_hi(name: str):
     if not isinstance(name, str):
         raise TypeError("name is of invalid type")
     if not len(name):

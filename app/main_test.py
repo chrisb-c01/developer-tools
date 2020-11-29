@@ -1,7 +1,9 @@
+# Third party imports
 import pytest
 
 
 def test_print_hi(capsys):
+    # Local application imports
     from app.main import print_hi
 
     # Happy flow

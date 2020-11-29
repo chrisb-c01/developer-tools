@@ -1,56 +1,42 @@
 repos:
-  - repo: local
+-   repo: https://github.com/timothycrosley/isort
+    rev: 5.6.4
     hooks:
-      - id: isort
-        name: isort
-        stages: [commit]
-        language: system
-        entry: isort
-        types: [python]
-      - id: black
-        name: black
-        stages: [commit]
-        language: system
-        entry: black
-        types: [python]
-      - id: flake8
-        name: flake8
-        stages: [commit]
-        language: system
-        entry: flake8
-        types: [python]
-      - id: mypy
-        name: mypy
-        stages: [commit]
-        language: system
-        entry: mypy
-        types: [python]
-        pass_filenames: false
-      - id: bandit
-        name: bandit
-        stages: [commit]
-        language: system
-        entry: bandit --ini .bandit -r
-        types: [python]
-        pass_filenames: false
-      - id: pytest
+    -   id: isort
+-   repo: https://github.com/psf/black
+    rev: 20.8b1
+    hooks:
+    -   id: black
+-   repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.4
+    hooks:
+    -   id: flake8
+        additional_dependencies: [flake8-bugbear]
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.790
+    hooks:
+    -   id: mypy
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
+    rev: v1.0.4
+    hooks:
+    -   id: python-bandit-vulnerability-check
+-   repo: local
+    hooks:
+    -   id: pytest
         name: pytest
         stages: [commit]
         language: system
-        entry: pytest app -ra
+        entry: pytest -v --showlocals
         types: [python]
         pass_filenames: false
-      - id: safety
-        name: safety
-        stages: [commit]
-        language: system
-        entry: safety check
-        types: [python]
-        pass_filenames: false
-      - id: coverage
+    -   id: coverage
         name: coverage
         stages: [push]
         language: system
         entry: coverage run
         types: [python]
         pass_filenames: false
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.1.3
+    hooks:
+    -   id: python-safety-dependencies-check
