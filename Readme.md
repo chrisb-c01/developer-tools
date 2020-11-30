@@ -14,7 +14,7 @@ It includes hooks for:
 Steps for running the pre-commit hooks: 
 1. Clone this repository: `git clone https://github.com/ChrisCalculus/developer-tools.git`
 2. Install requirements: `pip install -r requirements.txt`
-3. Install pre-commit hooks `pre-commit install`
+3. Install pre-commit hooks `pre-commit install` and `pre-commit install --hook-type pre-push`
 4. Change some code and commit to *your own* repository (triggering the pre-commit hooks) 
 
 Notes:
