@@ -1,4 +1,5 @@
-This repository contains some skeleton code to configure and run essential development tools for Python project via pre-commit hooks. It is an accompanying resource for my blog post '[Essential developer tools for improving your Python code]()' on Medium.  
+# Code skeleton bundling essential developer tools for Python
+This repository contains some skeleton code to configure and run essential development tools for Python project via pre-commit hooks. It is an accompanying resource for my blog post '[Essential developer tools for improving your Python code](https://c01.medium.com/essential-developer-tools-for-improving-your-python-code-71616254134b)' on Medium.  
 
 It includes hooks for:
 * [isort](https://github.com/PyCQA/isort)
